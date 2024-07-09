@@ -126,3 +126,4 @@
 /Users/hamza/Desktop/Employee-Management-System/EmployeeManagementAPI/obj/Debug/net8.0/EmployeeManagementAPI.pdb
 /Users/hamza/Desktop/Employee-Management-System/EmployeeManagementAPI/obj/Debug/net8.0/EmployeeManagementAPI.genruntimeconfig.cache
 /Users/hamza/Desktop/Employee-Management-System/EmployeeManagementAPI/obj/Debug/net8.0/ref/EmployeeManagementAPI.dll
+/Users/hamza/Desktop/Employee-Management-System/EmployeeManagementAPI/obj/Debug/net8.0/EmployeeManagementAPI.sourcelink.json
