@@ -2,6 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using EmployeeManagementAPI.Models;
 using EmployeeManagementAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -57,7 +61,7 @@ public class EmployeesController : ControllerBase
         }
         catch (DbUpdateConcurrencyException)
         {
-            if (!EmployeeExists(id))
+            if (!await EmployeeExistsAsync(id))
             {
                 return NotFound();
             }
@@ -73,6 +77,11 @@ public class EmployeesController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteEmployee(Guid id)
     {
+        if (!await EmployeeExistsAsync(id))
+        {
+            return NotFound();
+        }
+
         var employee = await _context.Employees.FindAsync(id);
         if (employee == null)
         {
@@ -85,8 +94,9 @@ public class EmployeesController : ControllerBase
         return NoContent();
     }
 
-    private bool EmployeeExists(Guid id)
+    private async Task<bool> EmployeeExistsAsync(Guid id)
     {
-        return _context.Employees.Any(e => e.Id == id);
+        var employee = await _context.Employees.FindAsync(id);
+        return employee != null;
     }
 }
