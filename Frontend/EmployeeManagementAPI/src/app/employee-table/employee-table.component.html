@@ -1,1 +1,22 @@
-<p>employee-table works!</p>
+<h2>Employyes</h2>
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>   
+        <th>Department</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let employee of employees">
+        <td>{{employee.id}}</td>
+        <td>{{employee.FirstName}}</td>
+        <td>{{employee.LastName}}</td>
+        <td>{{employee.department}}</td>
+        <td>
+            <button class="btn btn-primary" (click)="editEmployee(employee)">Edit</button>
+            <button class="btn btn-danger" (click)="deleteEmployee(employee)">Delete</button>
+        </td>
+    </tr>
+</tbody>
