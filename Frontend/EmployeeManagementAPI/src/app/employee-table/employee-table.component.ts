@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './employee-table.component.html',
   styleUrls: ['./employee-table.component.css']
 })
+
 export class EmployeeTableComponent implements OnInit {
   employees : Employee[] = [];
   
