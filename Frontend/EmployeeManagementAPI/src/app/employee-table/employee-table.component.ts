@@ -4,20 +4,17 @@ import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'employee-table',
-  standalone: true,
-  imports: [],
   templateUrl: './employee-table.component.html',
-  styleUrl: './employee-table.component.css'
+  styleUrls: ['./employee-table.component.css']
 })
-export class EmployeeTableComponent {
-  employyes : Employee[] = [];
+export class EmployeeTableComponent implements OnInit {
+  employees : Employee[] = [];
   
   constructor (private employeeService: EmployeeService) { }
 
   ngOnInit() {
-    this.employeeService .getEmployees().subscribe((data: Employee[]) => {
-      this.employyes = data;
+    this.employeeService.getEmployees().subscribe((data: Employee[]) => {
+      this.employees = data;
     });
   }
-
 }
