@@ -26,7 +26,7 @@ The Employee Management System is a web application designed to manage employee 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/employee-management-system.git
+   git clone git@github.com:hamzatlh/Employee-Management-System.git
    cd employee-management-system/EmployeeManagementAPI
 2. **Add Entity Framework tools**:
    ```bash
