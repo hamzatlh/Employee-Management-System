@@ -40,9 +40,8 @@ public class EmployeesController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
     {
-        _context.Employees.Add(employee);
+        await _context.Employees.AddAsync(employee);
         await _context.SaveChangesAsync();
-
         return CreatedAtAction(nameof(GetEmployee), new { id = employee.Id }, employee);
     }
 
